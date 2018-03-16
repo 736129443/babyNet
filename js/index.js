@@ -49,7 +49,7 @@ require(['jquery'],function($){
             }
         });
 
-        style('.Shopping','.ShoppingCar');
+        style('.Shopping','.ShoppingCar'); 
 
         $('.input-x').on({
             click:function(){
@@ -62,8 +62,11 @@ require(['jquery'],function($){
                     'display':'none',
                 })
             }
-            
-        })
+        });
+
+        style('.classification','.clearfix')
+        style('.lis','.sub-list')
+        
     });
 });
 //v : 鼠标进入的事件对象  
@@ -79,3 +82,96 @@ function style(v,k){
         }
     })
 }
+
+//轮播图
+
+function $(id){
+	return document.getElementById(id)
+}
+// window.onload = function(){
+ 	var obox = $('box'),
+ 	    aul = $('oul'),
+ 	    ali = aul.children;
+ 	    obtn = $('btn'),
+ 	    leftBtn = $('left-btn'),
+ 	    rightBtn = $('right-btn');
+ 	    obean = $('bean'),
+ 	    obeanUl = $('bean-ul'),
+ 	    obeanLi = Array.from(obeanUl.children);
+ 	    // console.log(obeanLi)
+
+
+ 	var index = 0;
+ 	var obeanLiIndex = 0;
+ 	var timer = null;
+ 	var iperw = 1400;
+
+ 		//复制一个li的内容放到ul中
+ 		 aul.innerHTML += ali[0].innerHTML;
+ 		 // console.log((aul.children))
+ 		//设置box的宽度
+ 		aul.style.width = ali.length * iperw + 'px';
+
+ 		obox.onmouseover = function(){
+ 			clearInterval(timer)
+ 			obtn.style.display = 'block';
+ 		}
+ 		obox.onmouseout = function(){
+ 			outmove();
+ 			obtn.style.display = 'none';
+ 		}
+
+ 	   	rightBtn.onclick = function(){
+ 	   	    rightmove();
+ 	   	};
+ 	   	leftBtn.onclick = function(){
+ 	   		index--;
+ 	   		obeanLiIndex--;
+ 	   		if(index < 0){
+ 	   			index = ali.length - 2;
+ 	          aul.style.left = -(ali.length - 1) * iperw + 'px';
+ 	   		}
+ 	   		bufferMove(aul,{left:-index * iperw});
+ 	   		setclassname();
+ 	   	};
+ 	   	function rightmove(){
+ 	   		index++;
+ 	   		obeanLiIndex++;
+ 	   		if(index >= ali.length){
+ 	   			index = 1;
+ 	          aul.style.left = '0px';
+ 	   		}
+ 	   		bufferMove(aul,{left:-index * iperw});
+ 	   		setclassname();
+ 	   	}
+		//自动运行
+ 	   	outmove();
+ 	   	function outmove(){
+ 	   		timer = setInterval(function(){
+ 	   			rightmove();
+ 	   		},3000);
+ 	   	}
+
+
+ 	   	obeanLi.forEach((v,k) => {
+			v.onclick = function(){
+				index = k
+				obeanLiIndex = k;
+				bufferMove(aul,{left:- index * iperw})
+				setclassname();
+			}
+		})
+
+ 	   	function setclassname(){
+ 	   		if( obeanLiIndex >= obeanLi.length){
+ 	   			obeanLiIndex = 0
+ 	   		}
+ 	   		if(obeanLiIndex < 0){
+ 	   			obeanLiIndex = obeanLi.length -1;
+ 	   		}
+	   		obeanLi.forEach((v) => v.className = '');					
+	
+			obeanLi[obeanLiIndex].className = 'a';
+ 	   	}
+ 	   
+// };

@@ -258,7 +258,6 @@ ul, li {
         .wrapper .nav .title a:last-child {
           position: relative; }
         .wrapper .nav .title a .hot {
-          z-index: 100;
           position: absolute;
           top: -4px;
           width: 27px;
@@ -286,6 +285,7 @@ ul, li {
             color: #fff;
             cursor: pointer; }
           .wrapper .nav .title .fom .classification .clearfix {
+            display: none;
             position: absolute;
             left: -175px;
             top: 33px;
@@ -318,11 +318,13 @@ ul, li {
             .wrapper .nav .title .fom .classification .clearfix .con {
               margin-left: 110px;
               background: #fff;
-              border-left: 1px solid #ececec; }
+              border-left: 1px solid #ececec;
+              display: block;
+              height: 527px; }
               .wrapper .nav .title .fom .classification .clearfix .con .rid {
                 padding: 10px;
                 padding-bottom: 0;
-                display: block;
+                display: inline-block;
                 margin: 0;
                 line-height: 30px;
                 text-align: right;
@@ -417,3 +419,216 @@ ul, li {
                 cursor: pointer; }
             .wrapper .nav .title .fom .search .list.list li:hover {
               background: #afafaf; }
+
+.container {
+  display: block;
+  position: relative; }
+  .container .nav-cont {
+    height: 30px;
+    padding: 0;
+    box-shadow: 0 1px 5px #bbb;
+    z-index: 79;
+    position: relative;
+    background: #fff; }
+    .container .nav-cont .wrapper {
+      width: 1080px;
+      margin: 0 auto;
+      position: relative;
+      display: block; }
+      .container .nav-cont .wrapper ul {
+        line-height: 30px; }
+        .container .nav-cont .wrapper ul li {
+          float: left;
+          position: relative;
+          height: 30px;
+          vertical-align: top; }
+          .container .nav-cont .wrapper ul li .seg {
+            height: 21px;
+            width: 1px;
+            padding: 0;
+            background: #ddd;
+            margin: 5px 20px 0; }
+          .container .nav-cont .wrapper ul li a {
+            margin: 0 12px 0 0;
+            padding: 0 10px;
+            color: #999;
+            display: block;
+            height: 27px;
+            border-bottom: 3px solid #fff;
+            line-height: 30px; }
+          .container .nav-cont .wrapper ul li .lis {
+            position: relative; }
+          .container .nav-cont .wrapper ul li .sub-list {
+            display: none;
+            padding: 0 20px 9px 20px;
+            width: 230px;
+            position: absolute;
+            top: 30px;
+            background: #fff;
+            border: 1px #E6E6E6 solid;
+            left: -79px; }
+            .container .nav-cont .wrapper ul li .sub-list a {
+              display: inline-block;
+              padding: 0; }
+            .container .nav-cont .wrapper ul li .sub-list .arrow {
+              width: 8px;
+              height: 4px;
+              overflow: hidden;
+              position: absolute;
+              top: -4px;
+              left: 50%;
+              margin-left: -4px;
+              background: url("../imgs/arrow.png"); }
+            .container .nav-cont .wrapper ul li .sub-list h5 {
+              font-size: 13px;
+              color: #8e8e8e;
+              margin: 15px 0 5px 0;
+              font-weight: 400;
+              line-height: 1.6em; }
+            .container .nav-cont .wrapper ul li .sub-list h5:hover {
+              color: #8e8e8e; }
+            .container .nav-cont .wrapper ul li .sub-list p {
+              margin: 0 0 6px 0;
+              line-height: 1.4em; }
+          .container .nav-cont .wrapper ul li .sub-list a:hover {
+            border-color: #fff; }
+        .container .nav-cont .wrapper ul .tomorrow {
+          position: absolute;
+          right: 0;
+          font-size: 13px;
+          color: #ff506b;
+          padding: 0 28px;
+          background: #f7f7f7;
+          height: 30px;
+          display: inline-block;
+          vertical-align: top;
+          line-height: 30px; }
+          .container .nav-cont .wrapper ul .tomorrow a {
+            color: #ff506b;
+            border-color: #f7f7f7;
+            margin: 0 12px 0 0;
+            padding: 0 10px;
+            display: block;
+            height: 27px;
+            border-bottom: 3px solid #fff;
+            font-size: 13px; }
+        .container .nav-cont .wrapper ul.aul li :hover {
+          border-color: #ff506b;
+          color: #FF697F; }
+        .container .nav-cont .wrapper ul.aul .ls1:hover {
+          border-color: #fff; }
+        .container .nav-cont .wrapper ul.aul .tomorrow a:hover {
+          border-color: #fff; }
+  .container .lb1 {
+    position: relative;
+    height: 320px;
+    width: 100%;
+    overflow: hidden; }
+    .container .lb1 #box {
+      width: 100%;
+      height: 320px;
+      display: block;
+      width: 100%;
+      height: 320px; }
+      .container .lb1 #box img {
+        display: block;
+        width: 1400px;
+        height: 320px;
+        /*display: none;*/ }
+      .container .lb1 #box #oul {
+        position: absolute;
+        height: 400px; }
+        .container .lb1 #box #oul li {
+          float: left; }
+      .container .lb1 #box #btn {
+        display: none;
+        width: 40px;
+        height: 60px; }
+        .container .lb1 #box #btn a {
+          position: absolute;
+          top: 50%;
+          font-size: 30px;
+          color: white;
+          text-align: center;
+          line-height: 60px;
+          display: block;
+          width: 40px;
+          height: 60px;
+          background: rgba(0, 0, 0, 0.4); }
+        .container .lb1 #box #btn #right-btn {
+          right: 0; }
+      .container .lb1 #box #bean-ul {
+        position: absolute;
+        bottom: 10px;
+        left: 46%;
+        background: pink;
+        border-radius: 30px; }
+        .container .lb1 #box #bean-ul li {
+          float: left;
+          border-radius: 50%;
+          background: #fff;
+          margin: 5px 8px;
+          width: 10px;
+          height: 10px; }
+        .container .lb1 #box #bean-ul .a {
+          background: #FF697F; }
+    .container .lb1 .carousel .carousel-ul {
+      position: absolute;
+      padding: 0;
+      top: 1px;
+      left: 50%;
+      font-size: 0;
+      width: 250px;
+      height: 318px;
+      margin-left: 290px;
+      background: #FFF;
+      opacity: .805;
+      overflow: hidden; }
+      .container .lb1 .carousel .carousel-ul li {
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+        vertical-align: top;
+        width: 125px;
+        height: 160px; }
+        .container .lb1 .carousel .carousel-ul li a {
+          display: block;
+          height: 156px;
+          width: 122px;
+          border: 1px solid #ddd;
+          background: #fff;
+          padding: 1px;
+          cursor: pointer !important;
+          border-left: none;
+          color: #3E3E3E;
+          text-decoration: none; }
+          .container .lb1 .carousel .carousel-ul li a p {
+            text-align: center;
+            font-size: 13px;
+            color: #7f7f7f;
+            width: 94px;
+            overflow: hidden;
+            margin: 0 15px;
+            height: 20px;
+            word-break: break-all; }
+          .container .lb1 .carousel .carousel-ul li a .dot {
+            position: absolute;
+            left: 62px;
+            top: 12px;
+            width: 36px;
+            text-align: center;
+            font-size: 12px;
+            color: #FFF;
+            height: 36px;
+            line-height: 36px;
+            overflow: hidden;
+            margin: 0 15px;
+            word-break: break-all;
+            background: url("../imgs/i_icon3.png");
+            background-position: -53px -33px; }
+          .container .lb1 .carousel .carousel-ul li a img {
+            margin: 26px 15px 2px 15px;
+            width: 90px;
+            height: 90px;
+            border: 0;
+            color: #3E3E3E; }
