@@ -64,9 +64,28 @@ require(['jquery'],function($){
             }
         });
 
-        style('.classification','.clearfix')
-        style('.lis','.sub-list')
-        
+        style('.classification','.clearfix');
+        style('.lis','.sub-list');
+		
+		//右边内容绝对定位选项卡效果
+		$('.m-brand-tad li').bind('mouseover',function(){
+			let iIndex = $(this).index();
+			// console.log(iIndex)
+			$('.m-brand-tad li').removeClass('a').eq(iIndex).addClass('a');
+			$('.m-brand-list').css('display', 'none').eq(iIndex).css({display: 'block'});
+		})
+		//右边内容绝对定位选项卡效果 (热卖排行)
+		$('.m-hotsort-con-ul li').bind('mouseover',function(){
+			let iIndex = $(this).index();
+			$('.m-hotsort-con-ul li').removeClass('a').eq(iIndex).addClass('a');
+			$('.m-01020').css('display', 'none').eq(iIndex).css({display: 'block'});
+		})
+		//返回顶部的效果
+		homeStyle('.Customer-service','.sp1','#ifont');
+		homeStyle('.top','.sp2','#ifont2');
+		home('.iphone','#sp3');
+		home('.car','#sp4');
+		
     });
 });
 //v : 鼠标进入的事件对象  
@@ -77,11 +96,53 @@ function style(v,k){
         mouseover:function(){
             $(k).css('display','block');
         },
-        mouseout:function(){
+        mouseout:function(){ 
             $(k).css('display','none')
         }
     })
 }
+
+//回到顶部
+function homeStyle(v,k,n){
+	$(v).on({
+		mouseover:function(){
+			$(this).css({
+				'background':'#ff4965'
+			})
+			$(k).css({
+				'display':'block'
+			})
+			$(n).css({
+				'display':'none'
+			})
+			
+		},
+		mouseout:function(){
+			$(this).css({
+				'background': '#fff'
+			})
+			$(k).css({
+				'display':'none'
+			})
+			$(n).css({
+				'display':'block'
+			})
+		}
+	});
+}
+function home(v,k){
+	$(v).on({
+		mouseover:function(){
+			$(this).css('background','#ff4965'),
+			$(k).css('color','#fff')
+		},
+		mouseout:function(){
+			$(this).css('background','#fff'),
+			$(k).css('color','#ff4965')
+		}
+	})
+}
+
 
 //轮播图
 
@@ -154,7 +215,7 @@ function $(id){
 
 
  	   	obeanLi.forEach((v,k) => {
-			v.onclick = function(){
+			v.onmouseover = function(){
 				index = k
 				obeanLiIndex = k;
 				bufferMove(aul,{left:- index * iperw})
