@@ -102,7 +102,9 @@ require(['jquery'],function($){
 		
 		style('.view','.list-top');
 		
-
+       
+        showTime();
+        
     });
 });
 //v : 鼠标进入的事件对象  
@@ -165,97 +167,46 @@ function home(v,k,s){
 		}
 	})
 }
-
-
-//轮播图
-
-function $(id){
-	return document.getElementById(id)
+//倒计时
+function showTime(){ 
+    var time_start = new Date().getTime(); //设定当前时间
+    // console.log(time_start)
+	var time_end =  new Date("2018/03/24 09:00:00").getTime(); //设定目标时间
+	// 计算时间差 
+	var time_distance = time_end - time_start; 
+	// 天
+	var int_day = Math.floor(time_distance/86400000) 
+	time_distance -= int_day * 86400000; 
+	// 时
+	var int_hour = Math.floor(time_distance/3600000) 
+	time_distance -= int_hour * 3600000; 
+	// 分
+	var int_minute = Math.floor(time_distance/60000) 
+	time_distance -= int_minute * 60000; 
+	// 秒 
+	var int_second = Math.floor(time_distance/1000) 
+	// 时分秒为单数时、前面加零 
+	if(int_day < 10){ 
+		int_day = "0" + int_day; 
+	} 
+	if(int_hour < 10){ 
+		int_hour = "0" + int_hour; 
+	} 
+	if(int_minute < 10){ 
+		int_minute = "0" + int_minute; 
+	} 
+	if(int_second < 10){
+		int_second = "0" + int_second; 
+	} 
+    // 显示时间 
+    // console.log(int_day)
+    // console.log(int_hour)
+    // console.log(int_minute)
+    
+    $("#time_d").html(int_day); 
+	$("#time_h").html(int_hour); 
+	$("#time_m").html(int_minute);   
+	$("#time_s").html(int_second); 
+	// 设置定时器
+    setTimeout("showTime()",1000);
 }
-// window.onload = function(){
- 	var obox = $('box'),
- 	    aul = $('oul'),
- 	    ali = aul.children;
- 	    obtn = $('btn'),
- 	    leftBtn = $('left-btn'),
- 	    rightBtn = $('right-btn');
- 	    obean = $('bean'),
- 	    obeanUl = $('bean-ul'),
- 	    obeanLi = Array.from(obeanUl.children);
- 	    // console.log(obeanLi)
-
-
- 	var index = 0;
- 	var obeanLiIndex = 0;
- 	var timer = null;
- 	var iperw = 1400;
-
- 		//复制一个li的内容放到ul中
- 		 aul.innerHTML += ali[0].innerHTML;
- 		 // console.log((aul.children))
- 		//设置box的宽度
- 		aul.style.width = ali.length * iperw + 'px';
-
- 		obox.onmouseover = function(){
- 			clearInterval(timer)
- 			obtn.style.display = 'block';
- 		}
- 		obox.onmouseout = function(){
- 			outmove();
- 			obtn.style.display = 'none';
- 		}
-
- 	   	rightBtn.onclick = function(){
- 	   	    rightmove();
- 	   	};
- 	   	leftBtn.onclick = function(){
- 	   		index--;
- 	   		obeanLiIndex--;
- 	   		if(index < 0){
- 	   			index = ali.length - 2;
- 	          aul.style.left = -(ali.length - 1) * iperw + 'px';
- 	   		}
- 	   		bufferMove(aul,{left:-index * iperw});
- 	   		setclassname();
- 	   	};
- 	   	function rightmove(){
- 	   		index++;
- 	   		obeanLiIndex++;
- 	   		if(index >= ali.length){
- 	   			index = 1;
- 	          aul.style.left = '0px';
- 	   		}
- 	   		bufferMove(aul,{left:-index * iperw});
- 	   		setclassname();
- 	   	}
-		//自动运行
- 	   	outmove();
- 	   	function outmove(){
- 	   		timer = setInterval(function(){
- 	   			rightmove();
- 	   		},3000);
- 	   	}
-
-
- 	   	obeanLi.forEach((v,k) => {
-			v.onmouseover = function(){
-				index = k
-				obeanLiIndex = k;
-				bufferMove(aul,{left:- index * iperw})
-				setclassname();
-			}
-		})
-
- 	   	function setclassname(){
- 	   		if( obeanLiIndex >= obeanLi.length){
- 	   			obeanLiIndex = 0
- 	   		}
- 	   		if(obeanLiIndex < 0){
- 	   			obeanLiIndex = obeanLi.length -1;
- 	   		}
-	   		obeanLi.forEach((v) => v.className = '');					
-	
-			obeanLi[obeanLiIndex].className = 'a';
- 	   	}
- 	   
-// };
