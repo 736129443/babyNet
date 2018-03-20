@@ -81,7 +81,7 @@ require(['jquery'],function($){
 			$('.m-01020').css('display', 'none').eq(iIndex).css({display: 'block'});
 		})
 		//返回顶部的效果
-		homeStyle('.Customer-service','.sp1','#ifont');
+		homeStyle('.Customer-service','.sp1','#ifont'); 
 		homeStyle('.top','.sp2','#ifont2');
 		home('.iphone','#sp3','.iphone-side');
 		home('.car','#sp4','.cart');
@@ -90,19 +90,18 @@ require(['jquery'],function($){
 			var iSpeed = 1000;
 			$('body,html').animate({'scrollTop': 0}, iSpeed) 
 		});
-		//吸顶效果
-		$(window).scroll(function(){
-			if($(document).scrollTop() >= 126){
-				// console.log(sc.scrollTop());
-				$('.sub-fixed-top').css('display','block');
-			}else{
-				$('.sub-fixed-top').css('display','none');
-			}
-		});
+		// //吸顶效果
+		// $(window).scroll(function(){
+		// 	if($(document).scrollTop() >= 126){
+		// 		// console.log(sc.scrollTop());
+		// 		$('.sub-fixed-top').css('display','block');
+		// 	}else{
+		// 		$('.sub-fixed-top').css('display','none');
+		// 	}
+		// });
 		
 		style('.view','.list-top');
 		
-
     });
 });
 //v : 鼠标进入的事件对象  
@@ -165,97 +164,3 @@ function home(v,k,s){
 		}
 	})
 }
-
-
-//轮播图
-
-function $(id){
-	return document.getElementById(id)
-}
-// window.onload = function(){
- 	var obox = $('box'),
- 	    aul = $('oul'),
- 	    ali = aul.children;
- 	    obtn = $('btn'),
- 	    leftBtn = $('left-btn'),
- 	    rightBtn = $('right-btn');
- 	    obean = $('bean'),
- 	    obeanUl = $('bean-ul'),
- 	    obeanLi = Array.from(obeanUl.children);
- 	    // console.log(obeanLi)
-
-
- 	var index = 0;
- 	var obeanLiIndex = 0;
- 	var timer = null;
- 	var iperw = 1400;
-
- 		//复制一个li的内容放到ul中
- 		 aul.innerHTML += ali[0].innerHTML;
- 		 // console.log((aul.children))
- 		//设置box的宽度
- 		aul.style.width = ali.length * iperw + 'px';
-
- 		obox.onmouseover = function(){
- 			clearInterval(timer)
- 			obtn.style.display = 'block';
- 		}
- 		obox.onmouseout = function(){
- 			outmove();
- 			obtn.style.display = 'none';
- 		}
-
- 	   	rightBtn.onclick = function(){
- 	   	    rightmove();
- 	   	};
- 	   	leftBtn.onclick = function(){
- 	   		index--;
- 	   		obeanLiIndex--;
- 	   		if(index < 0){
- 	   			index = ali.length - 2;
- 	          aul.style.left = -(ali.length - 1) * iperw + 'px';
- 	   		}
- 	   		bufferMove(aul,{left:-index * iperw});
- 	   		setclassname();
- 	   	};
- 	   	function rightmove(){
- 	   		index++;
- 	   		obeanLiIndex++;
- 	   		if(index >= ali.length){
- 	   			index = 1;
- 	          aul.style.left = '0px';
- 	   		}
- 	   		bufferMove(aul,{left:-index * iperw});
- 	   		setclassname();
- 	   	}
-		//自动运行
- 	   	outmove();
- 	   	function outmove(){
- 	   		timer = setInterval(function(){
- 	   			rightmove();
- 	   		},3000);
- 	   	}
-
-
- 	   	obeanLi.forEach((v,k) => {
-			v.onmouseover = function(){
-				index = k
-				obeanLiIndex = k;
-				bufferMove(aul,{left:- index * iperw})
-				setclassname();
-			}
-		})
-
- 	   	function setclassname(){
- 	   		if( obeanLiIndex >= obeanLi.length){
- 	   			obeanLiIndex = 0
- 	   		}
- 	   		if(obeanLiIndex < 0){
- 	   			obeanLiIndex = obeanLi.length -1;
- 	   		}
-	   		obeanLi.forEach((v) => v.className = '');					
-	
-			obeanLi[obeanLiIndex].className = 'a';
- 	   	}
- 	   
-// };
