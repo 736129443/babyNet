@@ -9,7 +9,7 @@
  */
 require.config({
     baseURL:'./js',
-    paths:{//配置模块的路径
+    paths:{//配置模块的路径 
         'jquery':'jquery'
     }
 });
@@ -67,19 +67,6 @@ require(['jquery'],function($){
         style('.classification','.clearfix');
         style('.lis','.sub-list');
 		
-		//右边内容绝对定位选项卡效果
-		$('.m-brand-tad li').bind('mouseover',function(){
-			let iIndex = $(this).index();
-			// console.log(iIndex)
-			$('.m-brand-tad li').removeClass('a').eq(iIndex).addClass('a');
-			$('.m-brand-list').css('display', 'none').eq(iIndex).css({display: 'block'});
-		})
-		//右边内容绝对定位选项卡效果 (热卖排行)
-		$('.m-hotsort-con-ul li').bind('mouseover',function(){
-			let iIndex = $(this).index();
-			$('.m-hotsort-con-ul li').removeClass('a').eq(iIndex).addClass('a');
-			$('.m-01020').css('display', 'none').eq(iIndex).css({display: 'block'});
-		})
 		//返回顶部的效果
 		homeStyle('.Customer-service','.sp1','#ifont'); 
 		homeStyle('.top','.sp2','#ifont2');
@@ -90,19 +77,55 @@ require(['jquery'],function($){
 			var iSpeed = 1000;
 			$('body,html').animate({'scrollTop': 0}, iSpeed) 
 		});
-		// //吸顶效果
-		// $(window).scroll(function(){
-		// 	if($(document).scrollTop() >= 126){
-		// 		// console.log(sc.scrollTop());
-		// 		$('.sub-fixed-top').css('display','block');
-		// 	}else{
-		// 		$('.sub-fixed-top').css('display','none');
-		// 	}
-		// });
 		
 		style('.view','.list-top');
+		//放大镜效果
+			var ione = $(".one"),
+			ithe = $(".the"),
+			itwo = $(".two img"),
+			tthe = $(".the img");
 		
-    });
+		var arr = ["imgs/1.jpg","imgs/2.jpg"];
+		var oarr = ["imgs/111.jpg","imgs/222.jpg"];
+		itwo.each(function(i){
+			$(this).click(function(){
+				$(".one img").attr("src",arr[i])
+				tthe.attr("src",oarr[i])
+				itwo.removeClass("active")
+				$(this).addClass("active")
+			})
+			
+			ione.mousemove(function(a){
+				var evt = a || window.event 
+				ithe.css('display','block')
+				var ot = evt.clientY-($(".one").offset().top- $(document).scrollTop())-87;
+				var ol = evt.clientX-($(".one").offset().left- $(document).scrollLeft())-87;
+				if(ol<=0){ 
+					ol = 0;
+				}
+				if(ot<=0){
+					ot = 0;
+				}
+				if(ol>=175){
+					ol=175
+				}
+				if(ot>=175){
+					ot=175
+				}
+				$(".q2").css({'left':ol,'top':ot,'display':'block'})
+				var ott = ot/800*800
+				var oll = ol/800*800
+				tthe.css({'left':-oll,'top':-ott})
+			})
+			ione.mouseout(function(){
+				ithe.css('display','none')
+				$(".q2").css({'display':'none'})
+			})
+			
+		})
+	});
+	style('.promotion-info','.more-info');
+	showTime();
 });
 //v : 鼠标进入的事件对象  
 //k : 触发事件后的对象
@@ -157,10 +180,53 @@ function home(v,k,s){
 			$(k).css('color','#fff'),
 			$(s).css('display','block')
 		},
-		mouseout:function(){
+		mouseout:function(){  
 			$(this).css('background','#fff'),
 			$(k).css('color','#ff4965'),
 			$(s).css('display','none')
 		}
 	})
+}
+//倒计时
+function showTime(){ 
+    var time_start = new Date().getTime(); //设定当前时间
+    // console.log(time_start)
+	var time_end =  new Date("2018/03/24 09:00:00").getTime(); //设定目标时间
+	// 计算时间差 
+	var time_distance = time_end - time_start; 
+	// 天
+	var int_day = Math.floor(time_distance/86400000) 
+	time_distance -= int_day * 86400000; 
+	// 时
+	var int_hour = Math.floor(time_distance/3600000) 
+	time_distance -= int_hour * 3600000; 
+	// 分
+	var int_minute = Math.floor(time_distance/60000) 
+	time_distance -= int_minute * 60000; 
+	// 秒 
+	var int_second = Math.floor(time_distance/1000) 
+	// 时分秒为单数时、前面加零 
+	if(int_day < 10){ 
+		int_day = "0" + int_day; 
+	} 
+	if(int_hour < 10){ 
+		int_hour = "0" + int_hour; 
+	} 
+	if(int_minute < 10){ 
+		int_minute = "0" + int_minute; 
+	} 
+	if(int_second < 10){
+		int_second = "0" + int_second; 
+	} 
+    // 显示时间 
+    // console.log(int_day)
+    // console.log(int_hour)
+    // console.log(int_minute)
+    
+    $("#time_d").html(int_day); 
+	$("#time_h").html(int_hour); 
+	$("#time_m").html(int_minute);   
+	$("#time_s").html(int_second); 
+	// 设置定时器
+    setTimeout("showTime()",1000);
 }

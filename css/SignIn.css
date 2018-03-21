@@ -1,0 +1,265 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font: 12px/1.5 'Helvetica Neue',Helvetica,Arial,Sans-serif;
+  background: #fff;
+  min-width: 1080px; }
+
+a {
+  text-decoration: none;
+  display: block; }
+
+ul, li {
+  list-style: none; }
+
+.m-header {
+  width: 1080px;
+  margin: 0 auto;
+  padding-top: 45px;
+  overflow: hidden; }
+  .m-header .f-f1 {
+    float: left; }
+    .m-header .f-f1 a {
+      display: block;
+      background: url("../imgs/main_logo5.png") no-repeat 0 0 #fff;
+      height: 60px;
+      position: relative;
+      width: 250px; }
+  .m-header .f-fr {
+    float: right; }
+    .m-header .f-fr a {
+      display: block;
+      background: url("../imgs/upload_d96e41a66c898b1e6afef9efbfbdc1be_361x54.png") no-repeat 0 3px #fff;
+      height: 50px;
+      position: relative;
+      width: 360px; }
+
+.content {
+  width: 1080px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 110px 0; }
+  .content .left {
+    float: left;
+    width: 500px;
+    height: 354px;
+    background: no-repeat url("../imgs/09751803412737_500x354.png");
+    position: relative;
+    left: 50px; }
+  .content .right {
+    color: #666;
+    width: 400px;
+    border: 1px solid #ececec;
+    border-top: 2px solid #ff4965;
+    float: right; }
+    .content .right .m-ipt {
+      padding: 50px 35px; }
+      .content .right .m-ipt .title {
+        font-size: 14px;
+        color: #000;
+        font-weight: 700;
+        margin-bottom: 30px; }
+        .content .right .m-ipt .title .ipt-login {
+          font-size: 12px;
+          font-weight: 400;
+          color: #666;
+          float: right; }
+          .content .right .m-ipt .title .ipt-login span {
+            font-size: 12px;
+            font-weight: 400;
+            color: #666; }
+          .content .right .m-ipt .title .ipt-login a {
+            display: inline;
+            color: #ff4965;
+            transition: color .3s;
+            font-size: 12px;
+            font-weight: 400; }
+      .content .right .m-ipt .ipt-group {
+        margin-top: 15px; }
+        .content .right .m-ipt .ipt-group label {
+          display: block;
+          border: 1px solid #e6e6e6;
+          border-radius: 2px;
+          padding-left: 30px;
+          position: relative;
+          cursor: default; }
+          .content .right .m-ipt .ipt-group label .identi {
+            left: 8px;
+            top: 8px;
+            border-right: 1px solid #e6e6e6;
+            padding-right: 7px;
+            background-position: 0 0;
+            position: absolute;
+            background-image: url("../imgs/upload_c8f6a2dfe4ca17b3941740e88373a88e_14x93.jpg");
+            background-repeat: no-repeat;
+            width: 14px;
+            height: 14px;
+            line-height: 30px;
+            color: #fff;
+            text-align: center; }
+          .content .right .m-ipt .ipt-group label .ipt-input {
+            height: 30px;
+            font-size: 12px;
+            width: 278px;
+            color: #666;
+            line-height: 30px;
+            border: 0;
+            outline: 0;
+            padding: 0 10px;
+            background: 0 0;
+            position: relative;
+            margin: 0;
+            vertical-align: baseline;
+            font-family: sans-serif; }
+        .content .right .m-ipt .ipt-group .single {
+          height: 18px;
+          line-height: 18px;
+          margin-top: 8px;
+          color: #fe4b49; }
+          .content .right .m-ipt .ipt-group .single span {
+            margin-right: 3px; }
+      .content .right .m-ipt .ipt-group {
+        margin-top: 15px; }
+        .content .right .m-ipt .ipt-group .nc-content {
+          font-size: 12px; }
+          .content .right .m-ipt .ipt-group .nc-content .nc-scale {
+            width: auto;
+            height: 34px;
+            background: #e8e8e8;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            font-size: 12px; }
+            .content .right .m-ipt .ipt-group .nc-content .nc-scale .nc1-text .nc-lang {
+              font-family: "nc_iconfont";
+              font-size: 16px;
+              font-style: normal; }
+      .content .right .m-ipt .ipt-group label {
+        border-radius: 2px;
+        padding-left: 30px;
+        position: relative;
+        border: 1px solid #e6e6e6; }
+        .content .right .m-ipt .ipt-group label .lock {
+          position: absolute;
+          background-image: url("../imgs/upload_c8f6a2dfe4ca17b3941740e88373a88e_14x93.jpg");
+          left: 8px;
+          top: 8px;
+          border-right: 1px solid #e6e6e6;
+          padding-right: 7px;
+          background-position: 0 -47px;
+          background-repeat: no-repeat;
+          width: 14px;
+          height: 14px;
+          line-height: 30px;
+          color: #fff;
+          text-align: center; }
+        .content .right .m-ipt .ipt-group label .passlock {
+          position: absolute;
+          background-image: url("../imgs/upload_c8f6a2dfe4ca17b3941740e88373a88e_14x93.jpg");
+          background-repeat: no-repeat;
+          top: 8px;
+          width: 14px;
+          height: 14px;
+          line-height: 30px;
+          color: #fff;
+          text-align: center;
+          cursor: pointer;
+          top: 10px;
+          right: 8px;
+          background-position: 0 -66px; }
+      .content .right .m-ipt .ipt-tip {
+        padding-top: 15px; }
+        .content .right .m-ipt .ipt-tip a {
+          color: #ff4965;
+          transition: color .3s;
+          float: right; }
+          .content .right .m-ipt .ipt-tip a:hover {
+            color: #ff8094; }
+      .content .right .m-ipt .ipt-btn {
+        margin-top: 15px; }
+        .content .right .m-ipt .ipt-btn a {
+          transition: background .3s;
+          border-radius: 3px;
+          text-align: center;
+          font-size: 14px;
+          letter-spacing: 6px;
+          color: #fff;
+          background: #ff4965;
+          display: block;
+          height: 32px;
+          line-height: 32px; }
+      .content .right .m-ipt .ipt-pit {
+        margin-top: 15px; }
+        .content .right .m-ipt .ipt-pit span a {
+          display: inline;
+          transition: color .3s;
+          color: #ff4965; }
+          .content .right .m-ipt .ipt-pit span a:hover {
+            color: #ff8094; }
+        .content .right .m-ipt .ipt-pit span input {
+          vertical-align: middle; }
+      .content .right .m-ipt .ipt-quick {
+        margin-top: 15px;
+        overflow: hidden;
+        height: 24px;
+        line-height: 24px; }
+        .content .right .m-ipt .ipt-quick span {
+          float: left; }
+        .content .right .m-ipt .ipt-quick .qq {
+          background-position: 1px 0;
+          background-image: url("../imgs/764d876bb3aa326726486d71ee891b66_173x24.png");
+          background-repeat: no-repeat;
+          width: 25px;
+          height: 24px;
+          margin: 0 4px;
+          float: left; }
+        .content .right .m-ipt .ipt-quick .tb {
+          background-position: -59px 0;
+          background-image: url("../imgs/764d876bb3aa326726486d71ee891b66_173x24.png");
+          background-repeat: no-repeat;
+          width: 25px;
+          height: 24px;
+          margin: 0 4px;
+          float: left; }
+        .content .right .m-ipt .ipt-quick .wx {
+          width: 26px;
+          background-position: -119px 0;
+          background-image: url("../imgs/764d876bb3aa326726486d71ee891b66_173x24.png");
+          background-repeat: no-repeat;
+          width: 25px;
+          height: 24px;
+          margin: 0 4px;
+          float: left; }
+
+#footer {
+  margin-top: 0px;
+  text-align: center;
+  color: #666;
+  min-width: 1000px; }
+  #footer .footer-nav {
+    text-align: center;
+    border-top: 3px solid #FF5482;
+    background: #555;
+    padding: 10px 0;
+    color: #ddd; }
+    #footer .footer-nav a {
+      display: inline-block;
+      color: #ddd;
+      margin: 0 10px;
+      text-align: center; }
+  #footer .footer-content {
+    background: #fff;
+    padding: 20px 0 40px;
+    color: #999; }
+    #footer .footer-content .f-wrapper {
+      width: 1080px;
+      margin: 0 auto;
+      position: relative;
+      color: #999; }
+      #footer .footer-content .f-wrapper .mt-8 {
+        margin-top: 8px;
+        padding: 0; }

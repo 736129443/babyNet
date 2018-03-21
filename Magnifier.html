@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/iconfont.css">
     <script src="js/require.js" data-main="js/Magnifier"></script>
     <script src="js/bufferMove.js"></script>  
-</head>
+</head> 
 <body>
     <!--                     head                             -->
     <div class="nav-top"> 
@@ -17,7 +17,7 @@
             <ul class="view">
                 <li class="view-1">
                     您好, &nbsp;
-                    <a href="">请登录</a> &nbsp;
+                    <a href="">请登录</a> &nbsp; 
                     <a href="" style="color:#FF5482;">免费注册</a>
                 </li>
                 <li class="seg">|</li>
@@ -227,7 +227,7 @@
                 </div>  
             </div>
         </div>
-    </div>
+    </div> 
     <!--  主体内容   -->
     <div class="content">
         <div class="item-detail">
@@ -236,6 +236,17 @@
                 <a href="">洗护哺育 ></a>
                 <a href="">Pigeon/贝亲 ></a>
                 <span>贝亲宽口径玻璃奶瓶240ML（自带L码奶嘴）</span>
+                <div class="time">
+                    <span class="timer">
+                        <span class="main">
+                            距结束仅剩
+                            <span id="time_d"></span>天
+                            <span id="time_h"></span>时
+                            <span id="time_m"></span>分 
+                            <span id="time_s"></span>秒
+                        </span> 
+                    </span> 
+                </div>
             </div>
             <div class="detail-meta">
                 <div class="detail-meta-bg">
@@ -243,18 +254,16 @@
                         <div class="wai">
                             <div class="one">
                                 <img src="imgs/1.jpg" />
-                                <span></span>
-                            </div>
-                            <!-- <div class="two">
+                                <span class="q2"></span>
+                            </div> 
+                            <div class="two">
                                 <img class="active" src="imgs/11.jpg" />
-                                <img src="imgs/22.jpg" />
-                            </div> -->
+                                <img src="imgs/22.jpg" /> 
+                            </div>
                         </div>
-                        
-                        
-                        <!-- <div class="the">
+                        <div class="the">
                             <img src="imgs/111.jpg" />
-                        </div> -->
+                        </div>
                     </div>
                     <div class="main-wrapper">
                         <div class="title">
@@ -359,9 +368,116 @@
                             </div>
                         </div>
                     </div>
-                    <div class=""></div>
+                    <div class="eva-wrapper">
+                        <div class="title">特卖品牌</div>
+                        <div class="dec-con">
+                            <p>
+                                <label>品牌:</label>
+                                <span>Pigeon/亲贝</span>
+                            </p>
+                            <p>
+                                <em class="icon-check" title="已通过企业实名认证"></em>
+                                <em class="icon-pay" title="已缴纳保障金"></em>
+                                <em class="icon-shopid" title="工商执照"></em>
+                            </p>
+                            <p>
+                                <label>服务:</label>
+                            </p>
+                            <p class="p1">本商品由品牌入驻商从福建省福州市发货，并提供售后服务。</p>                            
+                        </div>
+                        <div class="eva-con">
+                            <p><label for="">宝贝评分:</label><span>4.8</span></p>
+                            <p><label for="">服务态度:</label><span>4.8</span></p>
+                            <p><label for="">物流速度:</label><span>4.8</span></p>                            
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div class="detail-info">
+                <div class="cont">
+                    <h3>
+                        <i class="iconfont icon-dunpai"></i>
+                        贝贝优势
+                    </h3>
+                    <div class="pure-1">
+                        <img src="imgs/6548c12d97afaf2d_802x854.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--                           footer                      -->
+        <div id="footer">
+            <div class="footer-nav">
+                <a href="">首页</a>|
+                <a href="">关于贝贝</a>|
+                <a href="">商家入驻</a>|
+                <a href="">正品保证</a>|
+                <a href="">人才招聘</a>|
+                <a href="">联系我们</a>|
+                <a href="">帮助中心</a>|
+                <a href="">友情链接</a>|
+                <a href="">手机客户端</a>|
+                <a href="">客服在线</a>|
+                <a href="">贝贝公益</a>|
+                <a href="">品质将康</a>|
+                <a href="">育儿社区</a>
+            </div>
+            <div class="footer-content">
+                <div class="f-wrapper">
+                    <p>浙ICP备14025287号 | 食品流通许可证：SP3301041510054925 | 出版物经营许可证：新出发零字第00086号</p>
+                    <p class="mt-8">© 2014-2018 杭州贝购科技有限公司 All Rights Reserved. 客服热线：0571-10107788</p>
+                </div>
+            </div>
+        </div>
+    <!--                          右侧固定定位及返回顶部等                            -->
+    <div class="slde-panel">
+        <!-- 购物车 -->
+        <div class="car">
+            <i id="sp4" class="iconfont icon-gouwuche"></i>
+            <em>0</em>
+            <div class="cart" style="display:none;">
+                <div class="main">
+                    <div class="cart-title">
+                        <i class="iconfont icon-gouwuche"></i>
+                        购物车是空的
+                    </div>
+                    <ul class="cart-info">
+                        <li>赶快去挑选商品吧!</li>
+                    </ul>
+                    <div class="care-footer">
+                        <div class="care-footer-total">
+                            小计<span>￥0.00</span>
+                        </div>
+                        <div class="care-footer-btn">
+                            <a href="">
+                                <i class="iconfont icon-gouwuche"></i>
+                                去购物车结账
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- iphone -->
+        <div class="iphone">
+            <i id="sp3" class="iconfont icon-iPhone"></i>
+            <div class="iphone-side" style="display:none;">
+                <p>下载手机APP</p>
+                <p>随时随地看上新</p>
+                <img src="imgs/40450807220001_158x158.jpg" alt="">
+            </div>
+        </div>
+        <!-- 客服 -->
+        <a href="" class="Customer-service">
+            <i id="ifont" class="iconfont icon-custom-service"></i>
+            <span class="sp1" style="display:none;">客服在线</span>
+        </a>
+        <!-- 返回顶部 -->
+        <div class="top">
+            <i id="ifont2" class="iconfont icon-shangjiantou"></i>
+            <span class="sp2" style="display:none;">回到顶部</span>
         </div>
     </div>
 </body>

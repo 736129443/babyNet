@@ -92,7 +92,7 @@ require(['jquery'],function($){
 		});
 		//吸顶效果
 		$(window).scroll(function(){
-			if($(document).scrollTop() >= 126){
+			if($(document).scrollTop() >= 126){ 
 				// console.log(sc.scrollTop());
 				$('.sub-fixed-top').css('display','block');
 			}else{
